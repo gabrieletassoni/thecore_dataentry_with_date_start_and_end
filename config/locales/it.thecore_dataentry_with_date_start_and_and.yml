@@ -1,0 +1,6 @@
+it:
+  thecore_dataentry_with_date_start_and_end:
+    not_before: Data iniziale
+    not_after: Data Finale
+    header: "Controlla le date per:"
+    description: "Prego confermare le date col pulsante sottostante."

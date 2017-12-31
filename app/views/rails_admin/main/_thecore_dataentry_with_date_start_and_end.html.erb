@@ -1,0 +1,16 @@
+<%=render "higher_level/barcode_simple_scan", hide_action: false%>
+<%=render "thecore_utils/html_helpers"%>
+
+<script>
+    // Function overridings
+    function contentHtmlString(data){
+      var html = $("<div></div>");
+      html.append("<h3><%=t "thecore_dataentry_with_date_start_and_end.header" %> "+data.barcode+"</h3>");
+      html.append(buildDTPicker("not-before", '<%=t "thecore_dataentry_with_date_start_and_end.not_before" %>', data.not_before));
+      html.append("<br/>");
+      html.append(buildDTPicker("not-after", '<%=t "thecore_dataentry_with_date_start_and_end.not_after" %>', data.not_after));
+      html.append("<br/>");
+      html.append("<strong><%=t "thecore_dataentry_with_date_start_and_end.description"%></strong>");
+      return html;
+    } 
+</script>
