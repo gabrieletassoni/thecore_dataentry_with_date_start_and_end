@@ -6,10 +6,14 @@
     function contentHtmlString(data){
       var html = $("<div></div>");
       html.append("<h3><%=t "thecore_dataentry_with_date_start_and_end.header" %> "+data.barcode+"</h3>");
-      html.append(buildDTPicker("not-before", '<%=t "thecore_dataentry_with_date_start_and_end.not_before" %>', data.not_before));
+      <%-if (not_before rescue true)%>
+      html.append(buildDTPicker("not-before", '<%=t "thecore_dataentry_with_date_start_and_end.not_before" %>', data.not_before, <%= not_before_ro rescue false %>));
       html.append("<br/>");
-      html.append(buildDTPicker("not-after", '<%=t "thecore_dataentry_with_date_start_and_end.not_after" %>', data.not_after));
+      <%-end%>
+      <%-if (not_after rescue true)%>
+      html.append(buildDTPicker("not-after", '<%=t "thecore_dataentry_with_date_start_and_end.not_after" %>', data.not_after, <%= not_after_ro rescue false %>));
       html.append("<br/>");
+      <%-end%>
       html.append("<strong><%=t "thecore_dataentry_with_date_start_and_end.description"%></strong>");
       return html;
     }
