@@ -7,11 +7,11 @@
       var html = $("<div></div>");
       html.append("<h3><%=t "thecore_dataentry_with_date_start_and_end.header" %> "+data.barcode+"</h3>");
       <%-if (not_before rescue true)%>
-      html.append(buildDTPicker("not-before", '<%=t "thecore_dataentry_with_date_start_and_end.not_before" %>', data.not_before, <%= not_before_ro rescue false %>));
+      html.append(buildDTPicker("not-before", '<%=t "thecore_dataentry_with_date_start_and_end.not_before" %>', data.not_before, <%= not_before_ro rescue false %>, <%= not_before_date_only rescue false%>));
       html.append("<br/>");
       <%-end%>
       <%-if (not_after rescue true)%>
-      html.append(buildDTPicker("not-after", '<%=t "thecore_dataentry_with_date_start_and_end.not_after" %>', data.not_after, <%= not_after_ro rescue false %>));
+      html.append(buildDTPicker("not-after", '<%=t "thecore_dataentry_with_date_start_and_end.not_after" %>', data.not_after, <%= not_after_ro rescue false %>, <%= not_after_date_only rescue false%>));
       html.append("<br/>");
       <%-end%>
       html.append("<strong><%=t "thecore_dataentry_with_date_start_and_end.description"%></strong>");
