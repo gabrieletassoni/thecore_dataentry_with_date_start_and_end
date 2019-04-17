@@ -1,3 +1,3 @@
 module ThecoreDataentryWithDateStartAndEnd
-  VERSION = '1.1.10'.freeze
+  VERSION = '1.2.6'.freeze
 end
